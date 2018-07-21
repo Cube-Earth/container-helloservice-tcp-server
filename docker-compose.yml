@@ -1,0 +1,6 @@
+version: '3'
+services:
+  main:
+    image: cubeearth/helloservice-tcp-server
+    ports: 
+      - "3333:3333"
