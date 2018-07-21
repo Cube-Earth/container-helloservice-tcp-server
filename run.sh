@@ -7,7 +7,7 @@ ip=`ifconfig | awk '/ *inet addr:/ { match($0, "[0-9\.]+"); ip=substr($0, RSTART
 while true
 do
 	echo "waiting ..."
-	printf "`date '+%H:%M:%S'`    %-16s    %s" $ip $HOSTNAME | nc -q 0 -l 3333 > /dev/null &
+	printf "`date '+%H:%M:%S'`    %-16s    %s\n" $ip $HOSTNAME | nc -q 0 -l 3333 > /dev/null &
 	wait $!
 	echo "new request served."
 done
